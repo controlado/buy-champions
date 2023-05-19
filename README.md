@@ -5,7 +5,7 @@
 Buy all champions that cost 450 automatically! <br>
 This is my second project using JavaScript :)
 
-<img src="https://github.com/controlado/buy-champions/assets/71716568/99441f2c-9f63-4729-a6e9-059ba65a04d3" width="700" />
+<img src="https://github.com/controlado/buy-champions/assets/71716568/0f808848-5651-4f46-96f7-9f7b14a6b220" width="700" />
 
 </div>
 <br>
