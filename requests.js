@@ -21,7 +21,7 @@ export class Store {
      * 
      * @async
      * @function
-     * @summary Deve ser chamada após a conclusão do `auth()`.
+     * @summary Deve ser chamada após a conclusão do {@link auth}.
      * @param {JSON[]} champions - Objetos devem possuir `itemId` e `ip`.
      * @return {Promise<Response>} Resposta da solicitação.
      */
@@ -45,7 +45,7 @@ export class Store {
      * 
      * @async
      * @function
-     * @summary Deve ser chamada após a conclusão do `auth()`.
+     * @summary Deve ser chamada após a conclusão do {@link auth}.
      * @param {Number} cost - Custo dos campeões que devem ser retornados.
      * @return {Promise<JSON[]>} Array de campeões disponíveis.
      */
@@ -73,7 +73,7 @@ export class Store {
      *
      * @async
      * @function
-     * @summary Deve ser chamada após a conclusão do `auth()`.
+     * @summary Deve ser chamada após a conclusão do {@link auth}.
      * @param {String} method - Método HTTP da requisição, como `GET`.
      * @param {String} endpoint - Endpoint da requisição para a loja.
      * @param {JSON} [requestBody] - Parâmetro opcional, corpo da requisição.
