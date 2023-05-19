@@ -13,10 +13,8 @@ const buttonId = "buy-450-champions-button"
 
 const onMutation = () => {
   const frameStore = document.querySelector("#rcp-fe-lol-store-iframe > iframe")
-  if (!frameStore) { console.debug("frameStore não foi reconhecido"); return }
-
-  const storeDocument = frameStore.contentDocument.documentElement
-  if (storeDocument.querySelector(`#${buttonId}`)) { console.debug("botão já criado"); return }
+  const storeDocument = frameStore?.contentDocument.documentElement
+  if (!frameStore || storeDocument.querySelector(`#${buttonId}`)) { return }
 
   // autenticando a loja
   const store = new Store()
