@@ -1,5 +1,5 @@
 import utils from "../_utils"
-import * as requests from "./requests"
+import { Store } from "./requests"
 
 /**
  * @author
@@ -19,7 +19,7 @@ const onMutation = () => {
   if (storeDocument.querySelector(`#${buttonId}`)) { console.debug("botão já criado"); return }
 
   // autenticando a loja
-  const store = new requests.Store()
+  const store = new Store()
 
   // criação do botão pra comprar os campeões
   const buyChampionButton = document.createElement("lol-uikit-flat-button")
