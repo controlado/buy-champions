@@ -16,8 +16,7 @@ const onMutation = () => {
   const storeDocument = frameStore?.contentDocument.documentElement
   if (!frameStore || storeDocument.querySelector(`#${buttonId}`)) { return }
 
-  // autenticando a loja
-  const store = new Store()
+  const store = new Store() // autenticando a loja
 
   // criação do botão pra comprar os campeões
   const buyChampionButton = document.createElement("lol-uikit-flat-button")
@@ -25,6 +24,7 @@ const onMutation = () => {
   buyChampionButton.textContent = "450 EA"
   buyChampionButton.style.marginRight = "18px"
 
+  // callback do botão de compra
   buyChampionButton.addEventListener("click", async () => {
     buyChampionButton.setAttribute("disabled", "true")
     try {
