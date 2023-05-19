@@ -1,7 +1,10 @@
 import axios from "https://cdn.skypack.dev/axios"
 
 /**
- * @author Yan Gabriel <Balaclava#1912>
+ * @author
+ * Nome: Yan Gabriel  
+ * Discord: Balaclava#1912  
+ * GitHub: https://github.com/controlado
  */
 
 export class Store {
@@ -13,6 +16,15 @@ export class Store {
         this.auth()
     }
 
+    /**
+     * Compra os campeões que da array recebida.
+     * 
+     * @async
+     * @function
+     * @summary Deve ser chamada após a conclusão do `auth()`.
+     * @param {JSON[]} champions - Objetos devem possuir `itemId` e `ip`.
+     * @return {Promise<Response>} Resposta da solicitação.
+     */
     async buyChampions(champions) {
         const items = champions.map(
             champion => (
@@ -28,6 +40,15 @@ export class Store {
         return await this.request("POST", "/storefront/v3/purchase", requestBody)
     }
 
+    /**
+     * Retorna os campeões disponíveis na loja, que possuem o custo recebido.
+     * 
+     * @async
+     * @function
+     * @summary Deve ser chamada após a conclusão do `auth()`.
+     * @param {Number} cost - Custo dos campeões que devem ser retornados.
+     * @return {Promise<JSON[]>} Array de campeões disponíveis.
+     */
     async getAvailableChampionsByCost(cost) {
         const playerChampions = await this.getAvailableChampions()
         const availableChampions = []
@@ -47,7 +68,18 @@ export class Store {
         return response.data
     }
 
-    async request(method, endpoint, requestBody = null) {
+    /**
+     * Faz uma requisição para a loja.
+     *
+     * @async
+     * @function
+     * @summary Deve ser chamada após a conclusão do `auth()`.
+     * @param {String} method - Método HTTP da requisição, como `GET`.
+     * @param {String} endpoint - Endpoint da requisição para a loja.
+     * @param {JSON} [requestBody] - Parâmetro opcional, corpo da requisição.
+     * @return {Promise<Response>} Resposta da requisição.
+     */
+    async request(method, endpoint, requestBody = undefined) {
         const requestParams = {
             "method": method,
             "headers": {
@@ -58,6 +90,13 @@ export class Store {
         return await this.session.request(this.url + endpoint, requestParams)
     }
 
+    /**
+     * Autentica a classe, definindo os atributos da instância.
+     * 
+     * @async
+     * @function
+     * @summary Essa função deve ser chamada antes de utilizar a classe.
+     */
     async auth() {
         this.url = await this.getStoreUrl()
         this.token = await this.getSummonerToken()

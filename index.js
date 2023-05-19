@@ -2,7 +2,10 @@ import utils from "../_utils"
 import * as requests from "./requests"
 
 /**
- * @author Yan Gabriel <Balaclava#1912>
+ * @author
+ * Nome: Yan Gabriel  
+ * Discord: Balaclava#1912  
+ * GitHub: https://github.com/controlado
  */
 
 const pluginName = "buy-champions"
@@ -29,7 +32,7 @@ const onMutation = () => {
     try {
       const availableChampions = await store.getAvailableChampionsByCost(450)
       if (availableChampions.length > 0) { await store.buyChampions(availableChampions) }
-        }
+    }
     catch (error) { console.error(pluginName, error) }
     finally { buyChampionButton.removeAttribute("disabled") }
   })
