@@ -24,17 +24,14 @@ const onMutation = () => {
   buyChampionButton.textContent = "450 EA"
   buyChampionButton.style.marginRight = "18px"
 
-  buyChampionButton.addEventListener("click", () => {
+  buyChampionButton.addEventListener("click", async () => {
     buyChampionButton.setAttribute("disabled", "true")
-    store.getAvailableChampionsByCost(450)
-      .then(champions => {
-        if (champions.length > 0) {
-          store.buyChampions(champions)
-            .then(response => console.log(pluginName, response))
-            .catch(error => console.error(pluginName, error))
+    try {
+      const availableChampions = await store.getAvailableChampionsByCost(450)
+      if (availableChampions.length > 0) { await store.buyChampions(availableChampions) }
         }
-      })
-      .finally(buyChampionButton.removeAttribute("disabled"))
+    catch (error) { console.error(pluginName, error) }
+    finally { buyChampionButton.removeAttribute("disabled") }
   })
 
   // selecionar o local onde os botões vão ser colocados
