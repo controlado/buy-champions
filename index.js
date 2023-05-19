@@ -3,8 +3,8 @@ import { Store } from "./requests"
 
 /**
  * @author
- * Nome: Yan Gabriel  
- * Discord: Balaclava#1912  
+ * Nome: Yan Gabriel    
+ * Discord: Balaclava#1912 (854886148455399436)    
  * GitHub: https://github.com/controlado
  */
 

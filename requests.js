@@ -2,8 +2,8 @@ import axios from "https://cdn.skypack.dev/axios"
 
 /**
  * @author
- * Nome: Yan Gabriel  
- * Discord: Balaclava#1912  
+ * Nome: Yan Gabriel    
+ * Discord: Balaclava#1912 (854886148455399436)    
  * GitHub: https://github.com/controlado
  */
 
