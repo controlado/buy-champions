@@ -21,8 +21,8 @@ const onMutation = () => {
   // criação do botão pra comprar os campeões
   const buyChampionButton = document.createElement("lol-uikit-flat-button")
   buyChampionButton.id = buttonId
-  buyChampionButton.textContent = "450"
-  buyChampionButton.style.marginRight = "20px"
+  buyChampionButton.textContent = "450 EA"
+  buyChampionButton.style.marginRight = "18px"
 
   buyChampionButton.addEventListener("click", () => {
     buyChampionButton.setAttribute("disabled", "true")
