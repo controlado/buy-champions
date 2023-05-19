@@ -1,6 +1,6 @@
 <div align="center">
 
-# `🐧` Buy Champions <br> [![Wakatime](https://wakatime.com/badge/user/89c5e1c8-9e67-43ef-bd0e-3ff9a4fde5e2/project/88cfd160-fb73-498c-9c64-8bd59b5869d1.svg)](https://wakatime.com/@programador/projects/ohrzmxpxdj) [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=flat&logo=discord&logoColor=white&color=blue)](https://discordapp.com/users/854886148455399436) <br> ![Languages](https://img.shields.io/badge/Documentation-gray) [![English](https://img.shields.io/badge/-English-blue)](README.md) [![Portuguese](https://img.shields.io/badge/-Português-blue)](README.br.md)
+# `🐧` Buy Champions <br> [![Wakatime](https://wakatime.com/badge/user/89c5e1c8-9e67-43ef-bd0e-3ff9a4fde5e2/project/88cfd160-fb73-498c-9c64-8bd59b5869d1.svg)](https://wakatime.com/@programador/projects/ohrzmxpxdj) [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=flat&logo=discord&logoColor=white&color=blue)](https://discordapp.com/users/854886148455399436) <br> ![Languages](https://img.shields.io/badge/Documentation-gray) [![English](https://img.shields.io/badge/-English-blue)](README.md) [![Portuguese](https://img.shields.io/badge/-Português%20Brasileiro-blue)](README.br.md)
 
 Buy all champions that cost 450 automatically! <br>
 This is my second project using JavaScript :)
