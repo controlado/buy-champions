@@ -25,7 +25,7 @@ const onMutation = () => {
   buyChampionButton.style.marginRight = "18px"
 
   // callback do botão de compra
-  buyChampionButton.addEventListener("click", async () => {
+  buyChampionButton.onclick = async () => {
     buyChampionButton.setAttribute("disabled", "true")
     try {
       const availableChampions = await store.getAvailableChampionsByCost(450)
@@ -33,7 +33,7 @@ const onMutation = () => {
     }
     catch (error) { console.error(pluginName, error) }
     finally { buyChampionButton.removeAttribute("disabled") }
-  })
+  }
 
   // selecionar o local onde os botões vão ser colocados
   const navBar = storeDocument.querySelector(".nav.nav-right")
