@@ -8,7 +8,11 @@ import { Store } from "./requests"
  * GitHub: https://github.com/controlado
  */
 
-const pluginName = "buy-champions"
+export const plugin = {
+  "name": "Buy Champions",
+  "url": "https://github.com/controlado/buy-champions",
+  "version": "1.0.1",
+}
 const buttonId = "buy-450-champions-button"
 
 const onMutation = () => {
@@ -31,7 +35,7 @@ const onMutation = () => {
       const availableChampions = await store.getAvailableChampionsByCost(450)
       if (availableChampions.length > 0) { await store.buyChampions(availableChampions) }
     }
-    catch (error) { console.error(pluginName, error) }
+    catch (error) { console.error(`${plugin.name}:`, error) }
     finally { buyChampionButton.removeAttribute("disabled") }
   }
 
@@ -41,7 +45,6 @@ const onMutation = () => {
 }
 
 window.addEventListener("load", () => {
-  console.debug(pluginName, "feito com carinho pelo Balaclava#1912")
+  console.debug(`${plugin.name}: coded by Balaclava#1912`)
   utils.routineAddCallback(onMutation, ["rcp-fe-lol-store-iframe"])
-  console.debug(pluginName, "plugin configurado com sucesso...")
 })
