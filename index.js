@@ -45,6 +45,6 @@ const onMutation = () => {
 }
 
 window.addEventListener("load", () => {
-  console.debug(`${plugin.name}: coded by Balaclava#1912`)
+  console.debug(`${plugin.name}: Report bugs to Balaclava#1912`)
   utils.routineAddCallback(onMutation, ["rcp-fe-lol-store-iframe"])
 })
