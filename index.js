@@ -1,4 +1,4 @@
-import utils from "../_utils"
+import { addRoutines } from "../controladoUtils"
 import { Store } from "./requests"
 
 /**
@@ -46,5 +46,5 @@ const onMutation = () => {
 
 window.addEventListener("load", () => {
   console.debug(`${plugin.name}: Report bugs to Balaclava#1912`)
-  utils.routineAddCallback(onMutation, ["rcp-fe-lol-store-iframe"])
+  addRoutines(onMutation)
 })
