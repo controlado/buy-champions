@@ -2,10 +2,10 @@ import { addRoutines } from "../controladoUtils"
 import { Store } from "./requests"
 
 /**
+ * @author balaclava
  * @name buy-champions
- * @author feminismo (balaclava)
- * @description Buy champions automatically! 🐧
  * @link https://github.com/controlado/buy-champions
+ * @description Buy champions automatically! 🐧
  */
 
 export const plugin = {
