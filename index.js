@@ -2,10 +2,10 @@ import { addRoutines } from "../controladoUtils"
 import { Store } from "./requests"
 
 /**
- * @author
- * Nome: Yan Gabriel    
- * Discord: Balaclava#1912 (854886148455399436)    
- * GitHub: https://github.com/controlado
+ * @name buy-champions
+ * @author feminismo (balaclava)
+ * @description Buy champions automatically! 🐧
+ * @link https://github.com/controlado/buy-champions
  */
 
 export const plugin = {

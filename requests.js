@@ -1,10 +1,10 @@
 import { StoreBase } from "../controladoUtils"
 
 /**
- * @author
- * Nome: Yan Gabriel    
- * Discord: Balaclava#1912 (854886148455399436)    
- * GitHub: https://github.com/controlado
+ * @name buy-champions
+ * @author feminismo (balaclava)
+ * @description Buy champions automatically! 🐧
+ * @link https://github.com/controlado/buy-champions
  */
 
 export class Store extends StoreBase {
