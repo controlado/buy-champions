@@ -33,7 +33,7 @@ const onMutation = () => {
     buyChampionButton.setAttribute("disabled", "true");
     try {
       const availableChampions = await store.getAvailableChampionsByCost(450);
-      if (availableChampions.length > 0) { await store.buyChampions(availableChampions); }
+      if (availableChampions.length > 0) { await store.buyChampions(...availableChampions); }
     }
     catch (error) { console.error(`${plugin.name}:`, error); }
     finally { buyChampionButton.removeAttribute("disabled"); }
