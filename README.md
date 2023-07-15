@@ -8,8 +8,8 @@
 [![english](https://img.shields.io/badge/-English-blue)](README.md)
 [![portuguese](https://img.shields.io/badge/-Português%20Brasileiro-blue)](README.br.md)
 
-Buy all champions that cost 450 automatically! <br>
-This is my second project using JavaScript :)
+Buy all champions by their cost automatically! <br>
+Click on the button to change the selected cost :)
 
 <img src="https://github.com/controlado/buy-champions/assets/71716568/0f808848-5651-4f46-96f7-9f7b14a6b220" width="700" alt="Plugin preview">
 

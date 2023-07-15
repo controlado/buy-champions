@@ -8,8 +8,8 @@
 [![english](https://img.shields.io/badge/-English-blue)](README.md)
 [![portuguese](https://img.shields.io/badge/-Português%20Brasileiro-blue)](README.br.md)
 
-Compre todos os campeões que custam 450 de essência! <br>
-Esse é o meu segundo projeto utilizando JavaScript :)
+Compre todos os campeões pelo seu custo automaticamente! <br>
+Clique no botão para mudar o custo selecionado :)
 
 <img src="https://github.com/controlado/buy-champions/assets/71716568/0f808848-5651-4f46-96f7-9f7b14a6b220" width="700" alt="Plugin preview">
 

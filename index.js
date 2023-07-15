@@ -1,5 +1,4 @@
-import { addRoutines } from "../controladoUtils";
-import { Store } from "./requests";
+import { Champion, StoreBase, addRoutines } from "../controladoUtils";
 
 /**
  * @author balaclava
@@ -8,43 +7,58 @@ import { Store } from "./requests";
  * @description Buy champions automatically! 🐧
  */
 
-export const plugin = {
-  "name": "Buy Champions",
-  "url": "https://github.com/controlado/buy-champions",
-  "version": "1.0.1",
-};
-const buttonId = "buy-450-champions-button";
-
-const onMutation = () => {
-  const frameStore = document.querySelector("#rcp-fe-lol-store-iframe > iframe");
-  const storeDocument = frameStore?.contentDocument.documentElement;
-  if (!frameStore || storeDocument.querySelector(`#${buttonId}`)) { return; }
-
-  const store = new Store(); // autenticando a loja
-
-  // criação do botão para comprar os campeões
-  const buyChampionButton = document.createElement("lol-uikit-flat-button");
-  buyChampionButton.id = buttonId;
-  buyChampionButton.textContent = "450 EA";
-  buyChampionButton.style.marginRight = "18px";
-
-  // callback do botão de compra
-  buyChampionButton.onclick = async () => {
-    buyChampionButton.setAttribute("disabled", "true");
-    try {
-      const availableChampions = await store.getAvailableChampionsByCost(450);
-      if (availableChampions.length > 0) { await store.buyChampions(...availableChampions); }
+class Store extends StoreBase {
+    async getAvailableChampions(ipCost, currentCost = 0) {
+        const response = await this.request("GET", "/storefront/v3/view/champions");
+        return response.data.catalog
+            .filter(champion => champion.ip === ipCost && !champion.owned)
+            .filter(champion => (currentCost += champion.ip) <= response.data.player.ip)
+            .map(champion => new Champion(champion.itemId, champion.ip));
     }
-    catch (error) { console.error(`${plugin.name}:`, error); }
-    finally { buyChampionButton.removeAttribute("disabled"); }
-  };
+}
 
-  // selecionar o local onde os botões vão ser colocados
-  const navBar = storeDocument.querySelector(".nav.nav-right");
-  navBar.insertBefore(buyChampionButton, navBar.firstChild);
+async function setupElements(selector) {
+    const storeIFrame = document.querySelector("#rcp-fe-lol-store-iframe > iframe");
+    const storeContainer = storeIFrame?.contentDocument.documentElement?.querySelector(selector);
+    if (!storeContainer || storeContainer.hasAttribute("buy-button")) { return; }
+
+    const store = new Store();
+    storeContainer.setAttribute("buy-button", "true");
+    storeContainer.insertBefore(newButton(store), storeContainer.firstChild);
+}
+
+function newButton(store) {
+    const costsGenerator = championsCosts();
+    let currentCost = costsGenerator.next().value;
+
+    const button = document.createElement("lol-uikit-flat-button");
+    button.classList.add("lol-uikit-flat-button-normal", "title-on-hover");
+    button.ariaLabel = "Buy champions that cost...";
+    button.textContent = `${currentCost} BE`;
+    button.onclick = async () => {
+        button.setAttribute("disabled", "true");
+        try {
+            const champions = await store.getAvailableChampions(currentCost);
+            if (champions.length) { await store.buyChampions(...champions); }
+        } finally {
+            button.removeAttribute("disabled");
+        }
+    };
+    button.oncontextmenu = () => {
+        currentCost = costsGenerator.next().value;
+        button.textContent = `${currentCost} BE`;
+    };
+    return button;
+}
+
+function* championsCosts() {
+    const costs = [450, 1350, 3150, 4800, 6300];
+    while (true) { // Infinite generator
+        yield* costs;
+    }
 };
 
 window.addEventListener("load", () => {
-  console.debug(`${plugin.name}: Report bugs to Balaclava#1912`);
-  addRoutines(onMutation);
+    addRoutines(() => setupElements("nav.navbar > .nav-right"));
+    console.debug("buy-champions: Report bugs to Balaclava#1912");
 });
