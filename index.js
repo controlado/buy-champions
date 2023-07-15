@@ -1,4 +1,5 @@
 import { Champion, StoreBase, addRoutines } from "../controladoUtils";
+import trans from "./trans.json";
 
 /**
  * @author balaclava
@@ -33,8 +34,8 @@ function newButton(store) {
 
     const button = document.createElement("lol-uikit-flat-button");
     button.classList.add("lol-uikit-flat-button-normal", "title-on-hover");
-    button.ariaLabel = "Buy champions that cost...";
     button.textContent = `${currentCost} BE`;
+    button.ariaLabel = getAriaLabel();
     button.onclick = async () => {
         button.setAttribute("disabled", "true");
         try {
@@ -49,6 +50,11 @@ function newButton(store) {
         button.textContent = `${currentCost} BE`;
     };
     return button;
+}
+
+function getAriaLabel() {
+    const clientLocale = document.body.dataset.lang;
+    return trans.tooltip[clientLocale] || trans.tooltip[trans.missing];
 }
 
 function* championsCosts() {
