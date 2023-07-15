@@ -2,6 +2,9 @@ name: Criar Release
 
 on:
   push:
+    paths-ignore:
+      - "**.md"
+      - "**.yml"
   repository_dispatch:
 
 env:
