@@ -34,5 +34,6 @@ A estrutura deve ser algo parecido com isso:
     ├── 📂 @default
     ├── 📄 controladoUtils.js
     └── 📂 buy-champions
+        ├── 📄 trans.json
         └── 📄 index.js
 ```
