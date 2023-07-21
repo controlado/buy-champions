@@ -1,4 +1,4 @@
-import { Champion, StoreBase, addRoutines } from "../controladoUtils";
+import { Champion, StoreBase, addRoutines } from "../_controladoUtils";
 import trans from "./trans.json";
 
 /**
