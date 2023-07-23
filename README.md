@@ -19,7 +19,7 @@ Click on the button to change the selected cost :)
 ## Dependencies
 
 [Pengu Loader 1.0.4](https://github.com/PenguLoader/PenguLoader) (or any higher version) <br>
-[_controladoUtils.js](https://github.com/controlado/pengu-plugins/blob/master/_controladoUtils.js) (must be in the plugins folder)
+[controladoUtils.js](https://github.com/controlado/pengu-plugins) (must be in the plugins folder)
 
 ## Installation
 
@@ -32,8 +32,8 @@ The structure should look something like this:
 📂 Pengu Loader
 └── 📂 plugins
     ├── 📂 @default
-    ├── 📄 _controladoUtils.js
     └── 📂 buy-champions
-        ├── 📄 trans.json
-        └── 📄 index.js
+        ├── 📃 README.md
+        ├── 📃 README.br.md
+        └── 📀 index.js
 ```
