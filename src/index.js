@@ -1,4 +1,4 @@
-import { Champion, StoreBase, addRoutines } from "../_controladoUtils";
+import { Champion, StoreBase, addRoutines } from "https://cdn.skypack.dev/balaclava-utils@latest";
 import trans from "./trans.json";
 
 /**
