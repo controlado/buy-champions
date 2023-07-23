@@ -19,7 +19,7 @@ Clique no botão para mudar o custo selecionado :)
 ## Dependências
 
 [Pengu Loader 1.0.4](https://github.com/PenguLoader/PenguLoader) (ou qualquer versão superior) <br>
-[controladoUtils.js](https://github.com/controlado/pengu-plugins) (deve estar na pasta de plugins)
+[controladoUtils.js](https://github.com/controlado/pengu-plugins) (incluso automaticamente)
 
 ## Instalação
 

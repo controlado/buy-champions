@@ -19,7 +19,7 @@ Click on the button to change the selected cost :)
 ## Dependencies
 
 [Pengu Loader 1.0.4](https://github.com/PenguLoader/PenguLoader) (or any higher version) <br>
-[controladoUtils.js](https://github.com/controlado/pengu-plugins) (must be in the plugins folder)
+[controladoUtils.js](https://github.com/controlado/pengu-plugins) (automatically included)
 
 ## Installation
 
