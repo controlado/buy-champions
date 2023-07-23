@@ -1,6 +1,6 @@
 {
   "name": "buy-champions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Buy champions automatically! 🐧",
   "author": "balaclava",
   "repository": {
@@ -8,9 +8,9 @@
     "url": "git+https://github.com/controlado/buy-champions.git"
   },
   "license": "GPL-3.0-or-later",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "files": [
-    "src"
+    "dist"
   ],
   "keywords": [
     "pengu-loader",
