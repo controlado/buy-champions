@@ -1,4 +1,5 @@
 import { addRoutines, Champion, StoreBase } from "https://cdn.skypack.dev/balaclava-utils@latest";
+import { version } from "../package.json";
 import trans from "./trans.json"; // If you want to help me translate this, please open a PR! :)
 
 /**
@@ -66,5 +67,5 @@ function* championsCosts() {
 
 window.addEventListener("load", () => {
     addRoutines(() => setupElements("nav.navbar > .nav-right"));
-    console.debug("buy-champions: Report bugs to Balaclava#1912");
+    console.debug(`buy-champions(${version}): Report bugs to Balaclava#1912`);
 });
