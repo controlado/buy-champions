@@ -12,6 +12,7 @@ const banner = `/**
 
 export default defineConfig({
     build: {
+        outDir: "dist",
         rollupOptions: {
             input: "src/index.js",
             output: {
