@@ -12,8 +12,10 @@ const logPrefix = `buy-champions(${version}):`
  */
 
 class AvailableChampions {
-    constructor(storeData) {
-        this.storeData = storeData || [];
+    constructor(rawResponse) {
+        this.rawResponse = rawResponse;
+        this.playerIP = rawResponse.data.player.ip || 0;
+        this.storeData = rawResponse.data.catalog || [];
     }
 
     /**
@@ -23,7 +25,7 @@ class AvailableChampions {
     filterByPrice(priceToFilter) {
         return this.storeData
             .filter(champion => champion.ip === priceToFilter && !champion.owned)
-            .filter(champion => (priceToFilter += champion.ip) <= response.data.player.ip)
+            .filter(champion => (priceToFilter += champion.ip) <= this.playerIP)
             .map(champion => new Champion(champion.itemId, champion.ip));
     }
 
@@ -39,7 +41,7 @@ class AvailableChampions {
 class Store extends StoreBase {
     async getAvailableChampions() {
         const response = await this.request("GET", "/storefront/v3/view/champions");
-        return new AvailableChampions(response.data.catalog);
+        return new AvailableChampions(response);
     }
 }
 
