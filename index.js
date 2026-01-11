@@ -5,4 +5,4 @@
  * @description Buy champions automatically! 🐧
  */
 
-import "https://cdn.skypack.dev/buy-champions@latest?min";
+import "https://cdn.jsdelivr.net/npm/buy-champions@latest?min";
